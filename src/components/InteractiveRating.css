@@ -1,9 +1,43 @@
 :root {
     --orange: hsl(25, 97%, 53%);
     --white: hsl(0, 0%, 100%);
-    --ight-grey: hsl(217, 12%, 63%);
-    --medium-grey: hsl(216, 12%, 54%);
+    --light-grey: hsl(214,12%,54%);
+    --medium-grey: hsl(213,19%,18%);
+    --dark-grey: hsl(218,19%,16%);
     --dark-blue: hsl(213, 19%, 18%);
     --very-dark-blue: hsl(216, 12%, 8%);
+
+ 
 }
 
+* {
+    box-sizing: border-box 
+  }
+  
+.interactive-rating-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--dark-grey);
+    /* font-family: 'Overpass'; */
+    color: var(--white);
+    width: 25rem;
+    height: 25rem;
+    border-radius: 5%;
+    text-align: left;
+    padding: 2rem;
+}
+
+.ratings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating {
+    background-color: var(--medium-grey);
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3;
+    border-radius: 50%;
+}
