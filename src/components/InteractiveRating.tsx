@@ -51,36 +51,18 @@ const InteractiveRating = () => {
           </p>
         </div>
         <div className="ratings">
-          <div
-            className={`rating ${selectedRating === 1 ? "selected" : ""}`}
-            onClick={() => setStarsArray(1)}
-          >
-            1
-          </div>
-          <div
-            className={`rating ${selectedRating === 2 ? "selected" : ""}`}
-            onClick={() => setStarsArray(2)}
-          >
-            2
-          </div>
-          <div
-            className={`rating ${selectedRating === 3 ? "selected" : ""}`}
-            onClick={() => setStarsArray(3)}
-          >
-            3
-          </div>
-          <div
-            className={`rating ${selectedRating === 4 ? "selected" : ""}`}
-            onClick={() => setStarsArray(4)}
-          >
-            4
-          </div>
-          <div
-            className={`rating ${selectedRating === 5 ? "selected" : ""}`}
-            onClick={() => setStarsArray(5)}
-          >
-            5
-          </div>
+          {ratings.map((rating) => {
+            return (
+              <div
+                className={`rating ${
+                  selectedRating === rating ? "selected" : ""
+                }`}
+                onClick={() => setStarsArray(rating)}
+              >
+                {rating}
+              </div>
+            );
+          })}
         </div>
         <button className="submit">SUBMIT</button>
         <div className="thank-you-panel">THANK YOU</div>
