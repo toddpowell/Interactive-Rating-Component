@@ -1,3 +1,12 @@
+// Change CSS on cancelIdleCallback
+// https://bobbyhadz.com/blog/react-change-style-on-click
+// https://stackoverflow.com/questions/41978408/changing-style-of-a-button-on-click
+// className={headerIsHidden ? 'header__search__hidden' : 'header__search__shown'
+// https://stackoverflow.com/questions/57086729/how-to-change-state-on-multiple-elements-in-react-during-onclick-event
+// https://stackoverflow.com/questions/69234095/change-the-style-of-individual-element-in-react-component-which-return-multiple
+// I think this one will work:
+//      https://stackoverflow.com/questions/72398879/toggling-styles-of-multiple-buttons-onclick-in-react
+
 // import React from "react";
 import { useState } from "react";
 import "./InteractiveRating.css";
@@ -56,10 +65,24 @@ const InteractiveRating = () => {
           </p>
         </div>
         <div className="ratings">
-          <div className="rating" onClick={() => setStarsArray(1)}>
+          <div
+            className="rating"
+            onClick={() => setStarsArray(1)}
+            style={{
+              backgroundColor:
+                rating === 1 ? "var(--orange)" : "var(--medium-grey)",
+            }}
+          >
             1
           </div>
-          <div className="rating" onClick={() => setStarsArray(2)}>
+          <div
+            className="rating"
+            onClick={() => setStarsArray(2)}
+            style={{
+              backgroundColor:
+                rating === 2 ? "var(--orange)" : "var(--medium-grey)",
+            }}
+          >
             2
           </div>
           <div className="rating" onClick={() => setStarsArray(3)}>
