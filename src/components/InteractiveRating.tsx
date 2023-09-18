@@ -11,6 +11,7 @@
 import { useState } from "react";
 import "./InteractiveRating.css";
 import Star from "../assets/images/icon-star.svg";
+import ThankYouImage from "../assets/images/illustration-thank-you.svg";
 <style>@import url('https://fonts.google.com/specimen/Overpass');</style>;
 
 const InteractiveRating = () => {
@@ -48,24 +49,28 @@ const InteractiveRating = () => {
           <p className="copy">
             Please let us know how we did with your support request. All
             feedback is appreciated to help us improve our offering!
-          </p>
+          </p>{" "}
+          <div className="ratings">
+            {ratings.map((rating) => {
+              return (
+                <div
+                  className={`rating ${
+                    selectedRating === rating ? "selected" : ""
+                  }`}
+                  onClick={() => setStarsArray(rating)}
+                >
+                  {rating}
+                </div>
+              );
+            })}
+          </div>
+          <button className="submit">SUBMIT</button>
         </div>
-        <div className="ratings">
-          {ratings.map((rating) => {
-            return (
-              <div
-                className={`rating ${
-                  selectedRating === rating ? "selected" : ""
-                }`}
-                onClick={() => setStarsArray(rating)}
-              >
-                {rating}
-              </div>
-            );
-          })}
+
+        <div className="thank-you-panel">
+          <img src={ThankYouImage} alt="" className="" />
+          THANK YOU
         </div>
-        <button className="submit">SUBMIT</button>
-        <div className="thank-you-panel">THANK YOU</div>
       </div>
     </>
   );
