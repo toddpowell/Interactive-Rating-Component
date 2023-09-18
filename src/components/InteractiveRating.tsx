@@ -14,12 +14,13 @@ import Star from "../assets/images/icon-star.svg";
 <style>@import url('https://fonts.google.com/specimen/Overpass');</style>;
 
 const InteractiveRating = () => {
-  const [rating, setRating] = useState(-1);
+  const ratings = [1, 2, 3, 4, 5];
+  const [selectedRating, setSelectedRating] = useState(-1);
   const [stars, setStars] = useState(["*"]);
 
   const setStarsArray = (rating: number) => {
     console.log("setting stars " + rating);
-    setRating(rating);
+    setSelectedRating(rating);
     let stars = [];
     for (let i = 0; i < rating; i++) {
       stars.push("*");
@@ -42,21 +43,6 @@ const InteractiveRating = () => {
                 </>
               );
             })}
-            {/* <div className="star">
-              <img src={Star} />
-            </div>
-            <div className="star">
-              <img src={Star} />
-            </div>
-            <div className="star">
-              <img src={Star} />
-            </div>
-            <div className="star">
-              <img src={Star} />
-            </div>
-            <div className="star">
-              <img src={Star} />
-            </div> */}
           </div>
           <h1>How did we do?</h1>
           <p className="copy">
@@ -66,32 +52,33 @@ const InteractiveRating = () => {
         </div>
         <div className="ratings">
           <div
-            className="rating"
+            className={`rating ${selectedRating === 1 ? "selected" : ""}`}
             onClick={() => setStarsArray(1)}
-            style={{
-              backgroundColor:
-                rating === 1 ? "var(--orange)" : "var(--medium-grey)",
-            }}
           >
             1
           </div>
           <div
-            className="rating"
+            className={`rating ${selectedRating === 2 ? "selected" : ""}`}
             onClick={() => setStarsArray(2)}
-            style={{
-              backgroundColor:
-                rating === 2 ? "var(--orange)" : "var(--medium-grey)",
-            }}
           >
             2
           </div>
-          <div className="rating" onClick={() => setStarsArray(3)}>
+          <div
+            className={`rating ${selectedRating === 3 ? "selected" : ""}`}
+            onClick={() => setStarsArray(3)}
+          >
             3
           </div>
-          <div className="rating" onClick={() => setStarsArray(4)}>
+          <div
+            className={`rating ${selectedRating === 4 ? "selected" : ""}`}
+            onClick={() => setStarsArray(4)}
+          >
             4
           </div>
-          <div className="rating" onClick={() => setStarsArray(5)}>
+          <div
+            className={`rating ${selectedRating === 5 ? "selected" : ""}`}
+            onClick={() => setStarsArray(5)}
+          >
             5
           </div>
         </div>

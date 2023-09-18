@@ -47,6 +47,11 @@
     cursor: pointer;
 }
 
+.rating.selected {
+    color: var(--white);
+    background-color: var(--orange);
+}
+
 .copy {
     color: var(--light-grey)
 }
