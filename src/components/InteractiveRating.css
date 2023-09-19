@@ -26,6 +26,9 @@
 
 .rating-panel {
     padding: 2rem;
+}
+
+.rating-panel.hidden {
     display: none;
 }
 
@@ -97,16 +100,20 @@ button:hover {
     margin-right: 0;
 }
 
-.thank-you-panel img {
-    margin-top: 1rem;
-}
-
 .thank-you-panel {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
     padding: 1rem;
+}
+
+.thank-you-panel.hidden {
+    display: none;
+}
+
+.thank-you-panel img {
+    margin-top: 1rem;
 }
 
 .you-selected {
