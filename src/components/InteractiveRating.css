@@ -6,8 +6,6 @@
     --dark-grey: hsl(218,19%,16%);
     --dark-blue: hsl(213, 19%, 18%);
     --very-dark-blue: hsl(216, 12%, 8%);
-
- 
 }
 
 * {
@@ -19,13 +17,16 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--dark-grey);
-    /* font-family: 'Overpass'; */
     color: var(--white);
     width: 25rem;
     height: 25rem;
     border-radius: 5%;
     text-align: left;
+}
+
+.rating-panel {
     padding: 2rem;
+    display: none;
 }
 
 .ratings {
@@ -52,7 +53,7 @@
     background-color: var(--orange);
 }
 
-.copy {
+.copy, .thank-you-message {
     color: var(--light-grey)
 }
 
@@ -64,7 +65,6 @@ button {
     font-weight: 600;
     border: none;
     padding: 10px;
-    /* font-size: 26px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -97,6 +97,33 @@ button:hover {
     margin-right: 0;
 }
 
-.rating-panel {
-    /* visibility: hidden; */
+.thank-you-panel img {
+    margin-top: 1rem;
+}
+
+.thank-you-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.you-selected {
+    background-color: var(--medium-grey);
+    color: var(--orange);
+    padding: .25rem 1rem;
+    border-radius: 16px;
+    margin-top: 2rem;
+}
+
+.thank-you {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.thank-you-message {
+    text-align: center;
+    margin-top: 1rem;
 }
